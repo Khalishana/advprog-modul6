@@ -4,7 +4,7 @@ handle_connection method yang terdapat pada rust berfungsi membaca HTTP request 
 http_request 
 
 ## Commit 2 Reflection Notes
-![Commit 2 screen capture](hello_rust.jpg)
+![Commit 2 screen capture revise](rust_good_revise.jpg)
 Perubahan yang kita lakukan pada ```handle_function``` memungkinkan web server terkait dapat membuka file html yang bersesuaian dengan kode pada ```hello.html```. Pada modifikasi yang dilakukan pada file ```main.rs```, penambahan modul ```fs``` memungkinkan Rust untuk berinteraksi dengan file lain, dalam hal ini file html. Selain itu pada akhir kode, terdapat line ```stream.write_all(response.as_bytes()).unwrap();``` yang berfungsi mengirim kembali respons ke dalam urutan byte
 
 ## Commit 3 Reflection Notes
