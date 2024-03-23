@@ -24,3 +24,6 @@ let (status_line, filename) = match &request_line[..] {
     };
 ```
 dimana didalamnya terdapat implementasi modul thread dan time::Duration, ketika kita memasukkan input ```http://127.0.0.1:7878/sleep```, kita diharuskan untuk menunggu lebih lama sebelum akhirnya file html akan dimunculkan. Hal ini tentunya berbeda dengan ketika kita memberikan input ```http://127.0.0.1:7878``` dimana file html dapat langsung ditampilkan. Proses delay ini terjadi karena perintah ```http://127.0.0.1:7878/sleep``` akan menjalankan kode ```thread::sleep(Duration::from_secs(10));``` yang menyebabkan kita harus menunggu sekitar 10 detik sebelum akhirnya file html dimunculkan pada web browser
+
+## Commit 5 Reflection Notes
+Threadpool adalah kumpulan thread yang berfungsi untuk mengeksekusi fungsi secara paralel. Pada kode rust yang kita punya, threadpool berfungsi untuk menciptakan suatu multithreaded server. Threadpool bekerja dengan menerapkan sejumlah thread workers yang kemudian akan melakukan isi ulang kembali jika terdapat worker threads panic. Pada modifikasi yang dilakukan, implementasi threadpool ditandai dengan kode ```let pool = ThreadPool::new(4);``` yang menandakan dibuatnya variabel pool sebagai instance dari threadpool yang terdiri atas 4 thread. Penggunaan threadpool ini bertujuan agar kode yang ada dapat memiliki efisiensi yang lebih baik
