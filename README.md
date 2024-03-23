@@ -1,7 +1,7 @@
 ## Commit 1 Reflection Notes
 handle_connection method yang terdapat pada rust berfungsi membaca HTTP request dan me-return output berupa keterangan dan informasi HTTP request tersebut. Method ini menggunakan 
-```TcpStream``` dan ```BufReader``` untuk melakukan pembacaan yang efisien. Pada akhir kode, terdapat line ```println!("Request: {:#?}", http_request);``` yang akan mengembalikan output
-http_request 
+```TcpStream``` dan ```BufReader``` untuk melakukan pembacaan yang efisien. Method handle_connection akan melakukan pembacaan setiap line pada kode satu per satu dengan lewat adanya kode ```.lines()```. Selain itu, kode ```.map(|result| result.unwrap())``` digunakan untuk memastikan tidak ada error dengan mengeluarkan nilai dari Result<T, E> jika Ok, dan panic jika Err. Pada akhir kode, terdapat line ```println!("Request: {:#?}", http_request);``` yang akan mengembalikan output
+http_request. 
 
 ## Commit 2 Reflection Notes
 ![Commit 2 screen capture revise](rust_good_revise.jpg)
